@@ -332,22 +332,22 @@ function dressUp(product) {
     currentProducts[product.type] = img;
   }
 
-  const imgTabPanes = document.querySelector(".img-tabPanes");
+  const imgTabPanesList = document.querySelectorAll(".img-tabPanes");
 
-  // Kiểm tra xem thẻ imgTabPanes có tồn tại không
-  if (imgTabPanes) {
+  // Lặp qua tất cả các phần tử có lớp "img-tabPanes"
+  imgTabPanesList.forEach(imgTabPanes => {
     // Lấy ra giá trị của thuộc tính "src"
     let src = imgTabPanes.getAttribute("src");
-
+  
     // Kiểm tra xem đường dẫn bắt đầu bằng "../assets/" không
     if (src.startsWith("../assets/")) {
       // Thay đổi đường dẫn bắt đầu thành "./assets/"
       src = src.replace("../assets/", "./assets/");
-
+  
       // Cập nhật lại giá trị của thuộc tính "src"
       imgTabPanes.setAttribute("src", src);
     }
-  }
+  });
 }
 
 // Khởi tạo
