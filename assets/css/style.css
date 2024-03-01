@@ -6,6 +6,29 @@
 .tab-nav {
   transition: all 0.3s;
 }
+/* .img-tabPanes {
+  width: 200px;
+} */
+.hairstyle .img-tabPanes {
+  width: 1090px;
+  position: absolute;
+  left: 21px;
+  top: -14px;
+}
+.topclothes .img-tabPanes {
+  width: 246px;
+  position: absolute;
+  left: 104px;
+  top: 68px;
+  z-index: 10;
+}
+.botclothes .img-tabPanes {
+  width: 246px;
+  position: absolute;
+  left: 104px;
+  top: 68px;
+  z-index: 10;
+}
 .tab-content > .tab-pane {
   display: block !important;
 }

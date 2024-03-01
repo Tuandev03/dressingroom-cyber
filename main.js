@@ -275,6 +275,7 @@ function renderTabContent(type) {
     img.src = pane.imgSrc_jpg;
     img.alt = pane.name;
     img.addEventListener("click", () => dressUp(pane));
+    // img.classList.add("img-tabPanes");
     tabPane.appendChild(img);
     tabContentContainer.appendChild(tabPane);
   });
@@ -284,20 +285,51 @@ function renderTabContent(type) {
 let currentProducts = {};
 
 // Mặc sản phẩm lên mô hình
+// function dressUp(product) {
+//   const img = document.createElement("img");
+//   img.src = product.imgSrc_png;
+//   img.alt = product.name;
+// img.classList.add("img-tabPanes");
+//   // Kiểm tra xem sản phẩm đã được mặc chưa
+//   if (currentProducts[product.type]) {
+//     // Thay thế sản phẩm cũ bằng sản phẩm mới
+//     modelContainer.replaceChild(img, currentProducts[product.type]);
+//     // Cập nhật lại sản phẩm trong danh sách
+//     currentProducts[product.type] = img;
+//   } else {
+//     // Thêm sản phẩm mới vào mô hình
+//     modelContainer.appendChild(img);
+//     // Cập nhật sản phẩm mới vào danh sách
+//     currentProducts[product.type] = img;
+//   }
+// }
+
 function dressUp(product) {
   const img = document.createElement("img");
   img.src = product.imgSrc_png;
   img.alt = product.name;
+  img.classList.add("img-tabPanes");
+
+  // Lấy ra phần tử div tương ứng với loại sản phẩm
+  let productDiv = document.querySelector("." + product.type.toLowerCase());
+
+  // Kiểm tra xem phần tử đã tồn tại chưa
+  if (!productDiv) {
+    // Nếu phần tử không tồn tại, tạo mới và thêm vào
+    productDiv = document.createElement("div");
+    productDiv.className = product.type.toLowerCase();
+    document.querySelector(".contain").appendChild(productDiv);
+  }
 
   // Kiểm tra xem sản phẩm đã được mặc chưa
   if (currentProducts[product.type]) {
     // Thay thế sản phẩm cũ bằng sản phẩm mới
-    modelContainer.replaceChild(img, currentProducts[product.type]);
+    productDiv.replaceChild(img, currentProducts[product.type]);
     // Cập nhật lại sản phẩm trong danh sách
     currentProducts[product.type] = img;
   } else {
     // Thêm sản phẩm mới vào mô hình
-    modelContainer.appendChild(img);
+    productDiv.appendChild(img);
     // Cập nhật sản phẩm mới vào danh sách
     currentProducts[product.type] = img;
   }
