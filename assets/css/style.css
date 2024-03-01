@@ -22,12 +22,40 @@
   top: 68px;
   z-index: 10;
 }
+.shoes .img-tabPanes {
+  width: 250px;
+  position: absolute;
+  left: 102px;
+  top: 61px;
+  z-index: 10;
+}
+.tab-pane img {
+  cursor: pointer;
+}
 .botclothes .img-tabPanes {
   width: 246px;
   position: absolute;
   left: 104px;
   top: 68px;
   z-index: 10;
+}
+.necklaces .img-tabPanes {
+  width: 246px;
+  position: absolute;
+  left: 104px;
+  top: 68px;
+  z-index: 10;
+}
+.background .img-tabPanes {
+  width: 100%;
+  height: 100%;
+}
+.handbags .img-tabPanes {
+  width: 246px;
+  position: absolute;
+  left: 104px;
+  top: 68px;
+  z-index: 20;
 }
 .tab-content > .tab-pane {
   display: block !important;
