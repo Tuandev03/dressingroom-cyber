@@ -150,7 +150,7 @@
 .bikinitop {
   width: 250px;
   height: 500px;
-  background: url("/assets/images/bikini_branew.png");
+  background: url("/assets/images/allbody/bikini_branew.png");
   position: absolute;
   top: 12%;
   left: 22%;
@@ -160,7 +160,7 @@
 .bikinibottom {
   width: 250px;
   height: 500px;
-  background: url("/assets/images/bikini_pantsnew.png");
+  background: url("/assets/images/allbody/bikini_pantsnew.png");
   position: absolute;
   top: 12%;
   left: 22%;
