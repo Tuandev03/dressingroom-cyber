@@ -264,8 +264,6 @@ data.navPills.forEach((tab) => {
 });
 
 // Render tab content
-// Render tab content
-// Render tab content
 function renderTabContent(type) {
   const tabPanes = data.tabPanes.filter((pane) => pane.type === type);
   tabContentContainer.innerHTML = "";
@@ -288,6 +286,16 @@ function renderTabContent(type) {
     tabPane.appendChild(img);
     tabPane.appendChild(dressUpButton);
     tabContentContainer.appendChild(tabPane);
+    // Sửa đường dẫn cho tất cả các thẻ img có class là "product-img"
+    document.querySelectorAll(".product-img").forEach((img) => {
+      let src = img.getAttribute("src");
+      if (src.startsWith("../assets/")) {
+        src = src.replace("../assets/", "./assets/");
+        img.setAttribute("src", src);
+      }
+    });
+
+    // Sửa đường dẫn cho tất cả các thẻ img có class là "img-tabPanes"
   });
 }
 
@@ -322,6 +330,23 @@ function dressUp(product) {
     productDiv.appendChild(img);
     // Cập nhật sản phẩm mới vào danh sách
     currentProducts[product.type] = img;
+  }
+
+  const imgTabPanes = document.querySelector(".img-tabPanes");
+
+  // Kiểm tra xem thẻ imgTabPanes có tồn tại không
+  if (imgTabPanes) {
+    // Lấy ra giá trị của thuộc tính "src"
+    let src = imgTabPanes.getAttribute("src");
+
+    // Kiểm tra xem đường dẫn bắt đầu bằng "../assets/" không
+    if (src.startsWith("../assets/")) {
+      // Thay đổi đường dẫn bắt đầu thành "./assets/"
+      src = src.replace("../assets/", "./assets/");
+
+      // Cập nhật lại giá trị của thuộc tính "src"
+      imgTabPanes.setAttribute("src", src);
+    }
   }
 }
 
