@@ -264,6 +264,8 @@ data.navPills.forEach((tab) => {
 });
 
 // Render tab content
+// Render tab content
+// Render tab content
 function renderTabContent(type) {
   const tabPanes = data.tabPanes.filter((pane) => pane.type === type);
   tabContentContainer.innerHTML = "";
@@ -274,35 +276,23 @@ function renderTabContent(type) {
     const img = document.createElement("img");
     img.src = pane.imgSrc_jpg;
     img.alt = pane.name;
+    img.classList.add("product-img");
     img.addEventListener("click", () => dressUp(pane));
-    // img.classList.add("img-tabPanes");
+
+    // Tạo button mặc thử
+    const dressUpButton = document.createElement("button");
+    dressUpButton.textContent = "Mặc thử";
+    dressUpButton.classList.add("dress-up-button");
+    dressUpButton.addEventListener("click", () => dressUp(pane));
+
     tabPane.appendChild(img);
+    tabPane.appendChild(dressUpButton);
     tabContentContainer.appendChild(tabPane);
   });
 }
 
 // Biến lưu trữ sản phẩm hiện tại
 let currentProducts = {};
-
-// Mặc sản phẩm lên mô hình
-// function dressUp(product) {
-//   const img = document.createElement("img");
-//   img.src = product.imgSrc_png;
-//   img.alt = product.name;
-// img.classList.add("img-tabPanes");
-//   // Kiểm tra xem sản phẩm đã được mặc chưa
-//   if (currentProducts[product.type]) {
-//     // Thay thế sản phẩm cũ bằng sản phẩm mới
-//     modelContainer.replaceChild(img, currentProducts[product.type]);
-//     // Cập nhật lại sản phẩm trong danh sách
-//     currentProducts[product.type] = img;
-//   } else {
-//     // Thêm sản phẩm mới vào mô hình
-//     modelContainer.appendChild(img);
-//     // Cập nhật sản phẩm mới vào danh sách
-//     currentProducts[product.type] = img;
-//   }
-// }
 
 function dressUp(product) {
   const img = document.createElement("img");

@@ -6,6 +6,7 @@
 .tab-nav {
   transition: all 0.3s;
 }
+
 /* .img-tabPanes {
   width: 200px;
 } */
@@ -57,8 +58,27 @@
   top: 68px;
   z-index: 20;
 }
-.tab-content > .tab-pane {
+/* .tab-content > .tab-pane {
   display: block !important;
+} */
+.fade {
+  display: inline-flex !important;
+  flex-direction: column !important;
+}
+.dress-up-button {
+  margin-top: 20px;
+  outline: none;
+  border: 1px solid blue;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+.dress-up-button:focus {
+  background-color: blue;
+  outline: none;
+  border: none;
+  color: #fff;
 }
 .fade:not(.show) {
   opacity: 1 !important;
